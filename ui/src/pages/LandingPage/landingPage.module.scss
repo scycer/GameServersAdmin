@@ -1,0 +1,31 @@
+@import "global-styles/index";
+
+.landingPage {
+  thead,
+  tbody {
+    border: 2px solid #eeeef1;
+  }
+}
+.landingPage__highlight {
+  background-color: $light-blue;
+  padding: 2em 0;
+  margin-bottom: 4vh;
+  margin-top: -60px;
+}
+
+.navTabs li:hover {
+  cursor: pointer;
+}
+
+.buttonsGroups {
+  position: absolute;
+  right: 4%;
+  top: -8px;
+}
+
+.tableSection {
+  position: relative;
+  max-width: $body-max-width;
+  width: 100%;
+  margin: 5em auto 0 auto;
+}

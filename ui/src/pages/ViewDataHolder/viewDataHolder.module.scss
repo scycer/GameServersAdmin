@@ -1,0 +1,59 @@
+@import "global-styles/index";
+
+// card content styles specific to this page
+.cards__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @media screen and (min-width: 800px) {
+    flex-direction: row;
+  }
+}
+
+.cards__left,
+.cards__right {
+  width: 100%;
+}
+
+@media screen and (min-width: 800px) {
+  .cards__left {
+    width: 50%;
+  }
+
+  .cards__right {
+    width: 40%;
+  }
+}
+
+.card__table {
+  min-width: 100%;
+
+  td,
+  th {
+    font-weight: 300;
+    padding: 0.75em 0px;
+  }
+
+  tr {
+    border-bottom: 1px solid rgb(238, 238, 241);
+  }
+
+  tbody {
+    border-top: 1px solid #eeeef1;
+  }
+}
+
+// View details statuses
+.success {
+  background: url("../../assets/ACCC_DigitalInterface_Icons_Alert_Approved.svg")
+    0px 50% / 18px 18px no-repeat transparent;
+  padding: 8px 0px 8px 28px;
+}
+
+.warning {
+  background: url("../../assets/alert__warning__solid.svg") no-repeat 0 50%;
+  background-size: 18px 18px;
+  padding: 8px 0 8px 28px;
+  margin-bottom: 4px;
+}
