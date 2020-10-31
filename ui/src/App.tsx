@@ -16,7 +16,12 @@ class App extends React.Component<any, any> {
     return (
       <Router>
         <Switch>
-          <Route
+          <Route path="/">
+            <h1>Game Server Manager</h1>
+            <p>Game Server Status: {true ? "Running" : "Offline"}</p>
+          </Route>
+
+          {/* <Route
             path="/callback"
             render={(routeProps) => (
               <Callback
@@ -28,8 +33,8 @@ class App extends React.Component<any, any> {
                 userManager={userManager}
               />
             )}
-          />
-          <AppWithAuth />
+          /> */}
+          {/* <AppWithAuth /> */}
         </Switch>
       </Router>
     );
