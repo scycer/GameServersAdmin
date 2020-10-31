@@ -1,0 +1,44 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+    },
+    "variables": {},
+    "resources": [
+        {
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2020-06-01",
+            "name": "gsmUIDeployment",
+            "resourceGroup": "demoResourceGroup",
+            "properties": {
+                "mode": "Incremental",
+                "template": {
+                    "name": "gsmui",
+                    "type": "Microsoft.Storage/storageAccounts",
+                    "apiVersion": "2019-06-01",
+                    "location": "australiacentral",
+                    "properties": {
+                        "accessTier": "Hot",
+                        "minimumTlsVersion": "TLS1_2",
+                        "supportsHttpsTrafficOnly": true,
+                        "allowBlobPublicAccess": true,
+                        "networkAcls": {
+                            "bypass": "AzureServices",
+                            "defaultAction": "Allow",
+                            "ipRules": []
+                        }
+                    },
+                    "dependsOn": [],
+                    "sku": {
+                        "name": "Standard_LRS"
+                    },
+                    "kind": "StorageV2",
+                    "tags": {
+                        "Developer": "Daniel Hoek"
+                    }
+                }
+            }
+        }
+    ],
+    "outputs": {}
+}
