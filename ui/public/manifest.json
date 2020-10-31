@@ -1,6 +1,6 @@
 {
-  "short_name": "CTS",
-  "name": "Conformance Test Suite",
+  "short_name": "GSM",
+  "name": "Game Server Manager",
   "icons": [
     {
       "src": "favicon.ico",
