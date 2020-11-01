@@ -7,7 +7,9 @@ trigger:
  branches:
     include:
       - master
-      - release/*
+ paths:
+    include:
+      - "ui"  
 
 pool:
   vmImage: 'ubuntu-latest'
@@ -22,9 +24,10 @@ steps:
     npm install
     npm run build
   displayName: 'npm install and build'
+  workingDirectory: "$(Build.SourcesDirectory)/ui/"
 
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: '$(Build.SourcesDirectory)/build'
+    PathtoPublish: '$(Build.SourcesDirectory)/ui/build'
     ArtifactName: 'build'
     publishLocation: 'Container'
