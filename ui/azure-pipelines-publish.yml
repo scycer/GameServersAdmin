@@ -25,6 +25,6 @@ steps:
 
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: '$(Build.SourcesDirectory)/ui/'
+    PathtoPublish: '$(Build.SourcesDirectory)/ui/build'
     ArtifactName: 'build'
     publishLocation: 'Container'
