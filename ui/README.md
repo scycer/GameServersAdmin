@@ -8,3 +8,5 @@ App should be avaliable on port 3000
 
 `npm build`
 `./build` folder is the static files to deploy
+
+bhbi
