@@ -1,0 +1,17 @@
+trigger:
+ branches:
+    include:
+      - main
+ paths:
+    include:
+      - gameserverVM/http-service/*
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.SourcesDirectory)/gameserverVM/http-service'
+    ArtifactName: 'build'
+    publishLocation: 'Container'
