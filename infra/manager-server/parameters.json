@@ -1,0 +1,45 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "subscriptionId": {
+      "value": "b8f713e8-4d61-4053-a8bb-e38c9604c0bb"
+    },
+    "name": {
+      "value": "gsm-manager-server"
+    },
+    "location": {
+      "value": "Australia Central"
+    },
+    "hostingPlanName": {
+      "value": "gsm-manager-server-ASP"
+    },
+    "serverFarmResourceGroup": {
+      "value": "dhoek-gsm-rg"
+    },
+    "alwaysOn": {
+      "value": false
+    },
+    "storageAccountName": {
+      "value": "gsmmanagerserversa"
+    },
+    "sku": {
+      "value": "Dynamic"
+    },
+    "skuCode": {
+      "value": "Y1"
+    },
+    "workerSize": {
+      "value": "0"
+    },
+    "workerSizeId": {
+      "value": "0"
+    },
+    "numberOfWorkers": {
+      "value": "1"
+    },
+    "use32BitWorkerProcess": {
+      "value": true
+    }
+  }
+}
