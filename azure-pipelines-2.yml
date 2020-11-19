@@ -10,7 +10,7 @@ pool:
   vmImage: 'windows-latest'
 
 steps:
-- script: npm run build:production
+- script: cd ./manager-server && npm run build:production
   displayName: 'Build Functions App'
   
 - task: PublishBuildArtifacts@1
