@@ -13,8 +13,16 @@ steps:
 - script: cd ./manager-server && npm install && npm run build
   displayName: 'Build Functions App'
   
+- task: ArchiveFiles@2
+  inputs:
+    rootFolderOrFile: 'manager-server/dist'
+    includeRootFolder: true
+    archiveType: 'zip'
+    archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+    replaceExistingArchive: true
+
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: '$(Build.SourcesDirectory)/manager-server/dist'
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
     ArtifactName: 'build'
     publishLocation: 'Container'
