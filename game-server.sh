@@ -3,7 +3,7 @@
 # Ports: 7777,27015,15000,27102,27131
 
 PS3='Please enter your choice: '
-options=("Mordhau" "Sandstorm" "Update" "Install" "Quit")
+options=("Mordhau" "Sandstorm" "Update" "Set Config" "Install" "Quit")
 select opt in "${options[@]}"
 do
     case $opt in
@@ -57,7 +57,98 @@ do
         ;;
         "Quit")
             break
-            ;;
+        ;;
+        "Set Config")
+        mkdir -p ~/game-server/mordhau/Mordhau/Saved/Config/LinuxServer
+        touch ~/game-server/mordhau/Mordhau/Saved/Config/LinuxServer/Game.ini
+        cat <<EOT > ~/game-server/mordhau/Mordhau/Saved/Config/LinuxServer/Game.ini
+[/Script/Mordhau.MordhauGameMode]
+MOTDURL=
+bIsThirdPersonCameraDisabled=False
+ConstrainAspectRatio=0.000000
+bIsHitStopOnTeamHitsDisabled=False
+bDisableClientMods=False
+PlayerRespawnTime=5.000000
+AutoKickOnTeamKillAmount=5
+BallistaRespawnTime=30.000000
+CatapultRespawnTime=30.000000
+HorseRespawnTime=30.000000
+DamageFactor=1.000000
+TeamDamageFactor=0.500000
+TeamDamageFlinch=0
+MapRotation=FFA_ThePit
+MapRotation=TDM_Camp
+MapRotation=SKM_Grad
+MapRotation=FFA_Contraband
+MapRotation=TDM_Tourney
+MapRotation=SKM_MountainPeak
+MapRotation=FFA_Crossroads
+MapRotation=TDM_Taiga
+MapRotation=SKM_Feitoria
+MapRotation=FFA_Castello
+MapRotation=TDM_Arena
+MapRotation=SKM_Truce
+MapRotation=FFA_Camp
+MapRotation=TDM_Grad
+MapRotation=SKM_ThePit
+MapRotation=FFA_Tourney
+MapRotation=TDM_MountainPeak
+MapRotation=SKM_Contraband
+MapRotation=FFA_Taiga
+MapRotation=TDM_Feitoria
+MapRotation=SKM_Crossroads
+MapRotation=FFA_Arena
+MapRotation=TDM_Truce
+MapRotation=SKM_Castello
+MapRotation=FFA_Grad
+MapRotation=TDM_ThePit
+MapRotation=SKM_Camp
+MapRotation=FFA_MountainPeak
+MapRotation=TDM_Contraband
+MapRotation=SKM_Tourney
+MapRotation=FFA_Feitoria
+MapRotation=TDM_Crossroads
+MapRotation=SKM_Taiga
+MapRotation=FFA_Truce
+MapRotation=TDM_Castello
+MapRotation=SKM_Arena
+
+[/Script/Mordhau.MordhauGameSession]
+MaxSlots=64
+ServerName=SKETCHLAND
+ServerPassword=balls
+AdminPassword=balls
+RconPassword=balls
+BannedPlayers=()
+MutedPlayers=()
+LegacyBannedPlayers=()
+LegacyMutedPlayers=()
+LegacyAdmins=76561197967479351
+LegacyAdmins=76561197996743203
+EOT
+
+mkdir -p ~/game-server/sandstorm/Insurgency/Saved/Config/LinuxServer
+touch ~/game-server/sandstorm/Insurgency/Saved/Config/LinuxServer/Game.ini
+cat <<EOT > ~/game-server/sandstorm/Insurgency/Saved/Config/LinuxServer/Game.ini
+[Rcon]
+bEnabled=False
+Password=password
+ListenPort=27015
+
+[/Script/Insurgency.INSGameMode]
+bKillFeed=true
+TeamKillLimit=100
+bKillerInfo=True
+bKillerInfoRevealDistance=True
+
+[/Script/Insurgency.INSCoopMode]
+MinimumEnemies=6
+MaximumEnemies=12
+MaxPlayersToScaleEnemyCount=6
+AIDifficulty=0.1
+
+EOT
+        ;;
         *) echo "invalid option $REPLY";;
     esac
 done
